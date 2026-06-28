@@ -114,11 +114,28 @@ section{scroll-margin-top:80px}
 .gallery-wrap{position:relative}
 
 .gallery-fade{
-  position:absolute;top:0;bottom:0;width:120px;z-index:5;pointer-events:none;
+  position:absolute;top:0;bottom:0;width:220px;z-index:5;pointer-events:none;
 }
-.gallery-fade-left{left:0;background:linear-gradient(to right, var(--beige-lt) 0%, rgba(250,247,242,0) 100%)}
-.gallery-fade-right{right:0;background:linear-gradient(to left, var(--beige-lt) 0%, rgba(250,247,242,0) 100%)}
-@media(max-width:600px){.gallery-fade{width:48px}}
+.gallery-fade-left{
+  left:0;
+  background:linear-gradient(to right,
+    var(--beige-lt) 0%,
+    var(--beige-lt) 28%,
+    rgba(250,247,242,.85) 50%,
+    rgba(250,247,242,.45) 72%,
+    rgba(250,247,242,0) 100%);
+}
+.gallery-fade-right{
+  right:0;
+  background:linear-gradient(to left,
+    var(--beige-lt) 0%,
+    var(--beige-lt) 28%,
+    rgba(250,247,242,.85) 50%,
+    rgba(250,247,242,.45) 72%,
+    rgba(250,247,242,0) 100%);
+}
+@media(max-width:880px){.gallery-fade{width:140px}}
+@media(max-width:600px){.gallery-fade{width:90px}}
 
 .gallery-arrow{
   position:absolute;top:50%;transform:translateY(-50%);z-index:10;
@@ -294,11 +311,92 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
     <button class="gallery-arrow gallery-arrow-left" id="galleryPrev" type="button" aria-label="이전 이미지">‹</button>
     <button class="gallery-arrow gallery-arrow-right" id="galleryNext" type="button" aria-label="다음 이미지">›</button>
     <div class="gallery-grid" id="galleryGrid" aria-label="PomoWriter 사용 예시 화면">
-    <!-- 무한 루프 시작 지점을 위해, 트랙 맨 앞에 마지막(021) 이미지를 하나 더 둡니다 -->
+    <!-- 왼쪽 방향 무한 스크롤을 위한 앞쪽 보강 묶음 (원본과 동일한 21장) -->
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/001.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/001.png" alt="PomoWriter 집필 화면 예시 1" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/002.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/002.png" alt="PomoWriter 집필 화면 예시 2" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/003.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/003.png" alt="PomoWriter 집필 화면 예시 3" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/004.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/004.png" alt="PomoWriter 집필 화면 예시 4" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/005.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/005.png" alt="PomoWriter 집필 화면 예시 5" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/006.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/006.png" alt="PomoWriter 집필 화면 예시 6" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/007.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/007.png" alt="PomoWriter 집필 화면 예시 7" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/008.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/008.png" alt="PomoWriter 집필 화면 예시 8" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/009.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/009.png" alt="PomoWriter 집필 화면 예시 9" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/010.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/010.png" alt="PomoWriter 집필 화면 예시 10" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/011.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/011.png" alt="PomoWriter 집필 화면 예시 11" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/012.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/012.png" alt="PomoWriter 집필 화면 예시 12" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/013.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/013.png" alt="PomoWriter 집필 화면 예시 13" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/014.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/014.png" alt="PomoWriter 집필 화면 예시 14" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/015.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/015.png" alt="PomoWriter 집필 화면 예시 15" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/016.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/016.png" alt="PomoWriter 집필 화면 예시 16" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/017.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/017.png" alt="PomoWriter 집필 화면 예시 17" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/018.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/018.png" alt="PomoWriter 집필 화면 예시 18" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/019.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/019.png" alt="PomoWriter 집필 화면 예시 19" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
+    <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/020.png">
+      <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/020.png" alt="PomoWriter 집필 화면 예시 20" loading="lazy">
+      <span class="zoom-hint" aria-hidden="true">🔍</span>
+    </div>
     <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/021.png">
       <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/021.png" alt="PomoWriter 집필 화면 예시 21" loading="lazy">
       <span class="zoom-hint" aria-hidden="true">🔍</span>
     </div>
+    <!-- 여기부터 원본 묶음 -->
     <div class="gallery-item" data-full="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/001.png">
       <img src="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/refs/heads/main/001.png" alt="PomoWriter 집필 화면 예시 1" loading="lazy">
       <span class="zoom-hint" aria-hidden="true">🔍</span>
@@ -1047,33 +1145,32 @@ FEATURES.forEach((f) => {
   grid.appendChild(card);
 });
 
-/* ===== 갤러리 좌우 드래그 스크롤 + 무한 루프 ===== */
+/* ===== 갤러리 좌우 드래그 스크롤 + 양방향 무한 루프 ===== */
 (function(){
   const track = document.getElementById('galleryGrid');
   let isDown = false, startX = 0, startScroll = 0, moved = 0;
 
-  // 트랙 구성: [맨 앞 앵커 1장(021)] + [원본 묶음 21장] + [복제 묶음 21장] = 총 43장
-  // "한 묶음의 폭"은 원본 묶음 시작(인덱스 1)부터 복제 묶음 시작(인덱스 22)까지의 거리로 계산한다.
+  // 트랙 구성: [앞쪽 보강 묶음 21장] + [원본 묶음 21장] + [뒤쪽 보강 묶음 21장] = 총 63장
+  // 사용자는 항상 "가운데 원본 묶음" 범위 안에 있도록 하고, 양쪽 끝에 닿으면 원본의 같은 시각적 위치로 순간 이동시킨다.
   const SET_SIZE = 21;
   function getSetWidth(){
     const items = track.querySelectorAll('.gallery-item');
-    if(items.length < SET_SIZE * 2 + 1) return 0;
-    const from = items[1].getBoundingClientRect();      // 원본 묶음의 첫 장(001)
-    const to = items[1 + SET_SIZE].getBoundingClientRect(); // 복제 묶음의 첫 장(001)
+    if(items.length < SET_SIZE * 3) return 0;
+    const from = items[0].getBoundingClientRect();          // 앞쪽 보강 묶음의 첫 장
+    const to = items[SET_SIZE].getBoundingClientRect();     // 원본 묶음의 첫 장 (같은 이미지, 한 묶음 뒤)
     return to.left - from.left;
   }
 
   function loopCheck(){
     const setWidth = getSetWidth();
     if(setWidth <= 0) return;
-    const anchorWidth = track.querySelector('.gallery-item').getBoundingClientRect().width + 16; // 맨 앞 앵커(021) 1장 폭
-    // 복제 묶음 영역까지 넘어가면, 같은 시각적 위치인 원본 묶음으로 순간 이동
-    if(track.scrollLeft >= anchorWidth + setWidth){
-      track.scrollLeft -= setWidth;
-    }
-    // 맨 앞 앵커보다 더 왼쪽으로 가면(이론상 막혀있지만 안전하게 대비), 같은 시각적 위치인 끝부분으로 순간 이동
-    else if(track.scrollLeft < 0){
+    // 원본 묶음보다 왼쪽(앞쪽 보강 영역)으로 넘어가면, 같은 시각적 위치인 원본 묶음으로 순간 이동
+    if(track.scrollLeft < setWidth - 4){
       track.scrollLeft += setWidth;
+    }
+    // 원본 묶음보다 오른쪽(뒤쪽 보강 영역)으로 넘어가면, 같은 시각적 위치인 원본 묶음으로 순간 이동
+    else if(track.scrollLeft >= setWidth * 2 - 4){
+      track.scrollLeft -= setWidth;
     }
   }
 
@@ -1131,13 +1228,11 @@ FEATURES.forEach((f) => {
   // 스크롤할 때마다 무한 루프 지점을 확인 (자연 스크롤, 화살표의 smooth 스크롤, 드래그 모두 포함)
   track.addEventListener('scroll', loopCheck, { passive:true });
 
-  // 페이지 진입 시, 맨 앞 앵커(021)는 보이지 않고 001부터 보이도록 위치 보정
-  // (왼쪽으로 살짝 스크롤·드래그하면 021이 자연스럽게 나타남)
+  // 페이지 진입 시, 가운데(원본) 묶음의 시작 지점에서 출발하도록 위치 보정
+  // 왼쪽으로 드래그·스크롤하면 앞쪽 보강 묶음(마지막 이미지부터)이, 오른쪽으로 가면 뒤쪽 보강 묶음이 자연스럽게 이어짐
   function setInitialPosition(){
-    const items = track.querySelectorAll('.gallery-item');
-    if(items.length < 2) return;
-    const anchorWidth = items[0].getBoundingClientRect().width + 16;
-    track.scrollLeft = anchorWidth;
+    const setWidth = getSetWidth();
+    if(setWidth > 0) track.scrollLeft = setWidth;
   }
   setInitialPosition();
   window.addEventListener('load', setInitialPosition);
