@@ -277,6 +277,21 @@ details.acc .acc-body{padding:0 4px 20px;font-size:.88rem;color:var(--text-dim)}
 }
 .report-card p{color:var(--text-dim);font-size:.9rem;max-width:42ch}
 
+.report-panel{
+  max-height:0;overflow:hidden;
+  transition:max-height .45s ease, margin-top .45s ease;
+  margin-top:0;
+}
+.report-panel.open{
+  max-height:820px;
+  margin-top:16px;
+}
+.report-panel iframe{
+  width:100%;height:780px;border:none;
+  border-radius:14px;border:1px solid var(--divider-lt);
+  display:block;
+}
+
 /* ───────── 푸터 ───────── */
 footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 .foot-inner{max-width:1100px;margin:0 auto;padding:32px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;font-size:.82rem;color:var(--text-dim)}
@@ -306,7 +321,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 <!-- 히어로 -->
 <section class="hero">
   <div>
-    <span class="eyebrow">웹소설 작가를 위한 무료 프로그램</span>
+    <span class="eyebrow" style="font-size:.88rem">웹소설 작가를 위한 무료 프로그램</span>
     <h1>집필, 자료 수집, 메모, 투고&수익 관리를<br>하나의 프로그램으로.<br>오로지 <em>집필에만</em> 집중하세요.</h1>
     <p>PomoWriter는 뽀모도로와 집필 그리고 시놉부터 수익 관리까지<br>30가지 기능을 담은 웹소설 작가용 올인원 프로그램입니다.<br>AI 유출 걱정 없이, 파일 날림 걱정 없이<br>작가님의 집필 생활에 도움이 되는 것에만 집중했어요.</p>
     <div class="hero-actions">
@@ -615,7 +630,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 
     <div class="dl-card">
       <h3>🖥️ PomoWriter for Windows</h3>
-      <p>2026/05/31 버전입니다</p>
+      <p>2026/07/01 버전입니다</p>
       <a class="dl-btn" href="https://drive.google.com/file/d/1CIBxM3Tr8kFhPJ_KnO3pVz5DUrmZNUy0/view?usp=drive_link" target="_blank" rel="noopener">PomoWriter 다운로드</a>
 
       <div class="dl-warn">
@@ -640,7 +655,27 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 
     <div class="acc-list">
       <details class="acc" open>
-        <summary>2026.05.31 업데이트<span class="badge-latest">최신</span><span class="plus" aria-hidden="true">+</span></summary>
+        <summary>2026.07.01 업데이트<span class="badge-latest">최신</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="acc-body">
+          <ul>
+            <li>뽀모도로 백색소음과 TTS 음성이 서로 부딪히는 문제 해결.</li>
+            <li>[일정]에서도 월별 목표 설정 가능.</li>
+            <li>[플롯] 색상 수정.</li>
+            <li>[단어]에 <b>대체 가능한 단어와 표현문장 검색 기능 추가</b> (beta).</li>
+            <li><b>버그 수정</b>
+              <ul style="margin-top:6px">
+                <li>[캐릭] 서양식 이름이 반영되지 않던 문제 해결.</li>
+                <li>[일지] 글자수 자동계산 오류 수정.</li>
+                <li>뽀모도로 시간 오류 수정.</li>
+                <li>[마인] 하얀 글씨 문제 수정.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary>2026.05.31 업데이트<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
             <li>공백 글자수 카운트 방식을 수정해, 타 집필 프로그램과의 글자수 차이를 최대한 줄임.</li>
@@ -1062,7 +1097,10 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
         <h3 style="font-size:1.1rem;margin-bottom:6px">버그를 발견했거나, 있었으면 하는 기능이 있나요?</h3>
         <p>작가님의 의견이 PomoWriter를 더 나은 프로그램으로 만듭니다. 편하게 알려주세요.</p>
       </div>
-      <a class="btn btn-primary" href="https://pomowriter.oopy.io/320722d2-587f-805b-99fb-cc934e6f5c40" target="_blank" rel="noopener">기능 제의 & 버그 신고</a>
+      <button class="btn btn-primary" id="reportToggleBtn" type="button" onclick="toggleReportPanel()">기능 제의 & 버그 신고</button>
+    </div>
+    <div class="report-panel" id="reportPanel">
+      <iframe id="reportIframe" src="" title="기능 제의 & 버그 신고" loading="lazy" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -1388,6 +1426,28 @@ FEATURES.forEach((f) => {
   backdrop.addEventListener('click', closeActive);
   document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeActive(); });
 })();
+
+/* ===== 기능 제의 & 버그 신고 패널 토글 ===== */
+function toggleReportPanel(){
+  const panel = document.getElementById('reportPanel');
+  const btn   = document.getElementById('reportToggleBtn');
+  const iframe = document.getElementById('reportIframe');
+  const isOpen = panel.classList.toggle('open');
+
+  // 처음 열 때만 iframe src를 설정 (불필요한 사전 로딩 방지)
+  if(isOpen && !iframe.src.includes('joey.team')){
+    iframe.src = 'https://www.joey.team/b/630qy173VVYekLITJMRv';
+  }
+
+  btn.textContent = isOpen ? '닫기 ✕' : '기능 제의 & 버그 신고';
+
+  // 패널이 열리면 해당 위치로 부드럽게 스크롤
+  if(isOpen){
+    setTimeout(() => {
+      panel.scrollIntoView({ behavior:'smooth', block:'start' });
+    }, 80);
+  }
+}
 </script>
 </body>
 </html>
