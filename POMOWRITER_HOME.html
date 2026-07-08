@@ -265,6 +265,14 @@ details.acc .acc-body{padding:0 4px 20px;font-size:.88rem;color:var(--text-dim)}
 .acc-body ol{margin-left:18px;display:flex;flex-direction:column;gap:6px}
 .acc-body p{margin:8px 0}
 .acc-body b{color:var(--text)}
+.shortcut-table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:.86rem;table-layout:fixed}
+.shortcut-table th{background:var(--gray-wn);color:var(--text);font-weight:700;padding:8px 14px;text-align:left;border-bottom:2px solid var(--divider)}
+.shortcut-table td{padding:8px 14px;border-bottom:1px solid var(--divider-lt);color:var(--text-dim);word-break:keep-all}
+.shortcut-table col.col-key{width:220px}
+.shortcut-table td:first-child{font-family:'IBM Plex Sans KR',monospace;font-weight:600;color:var(--focus-deep);white-space:nowrap}
+.shortcut-table tr:last-child td{border-bottom:none}
+.shortcut-table tr:hover td{background:var(--surface)}
+.shortcut-section-title{font-size:.82rem;font-weight:700;color:var(--brown);letter-spacing:.04em;margin:14px 0 4px;text-transform:uppercase}
 .badge-latest{
   font-size:.68rem;background:var(--focus);color:#fff;padding:2px 8px;border-radius:999px;
   font-weight:700;letter-spacing:.02em;margin-left:8px;
@@ -787,6 +795,58 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 
     <div class="acc-list">
       <details class="acc">
+        <summary>단축키<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="acc-body">
+
+          <p class="shortcut-section-title">텍스트 서식</p>
+          <table class="shortcut-table">
+            <colgroup><col class="col-key"><col></colgroup>
+            <thead><tr><th>단축키</th><th>기능</th></tr></thead>
+            <tbody>
+              <tr><td>Ctrl + B</td><td>굵게</td></tr>
+              <tr><td>Ctrl + I</td><td>기울임</td></tr>
+              <tr><td>Ctrl + U</td><td>밑줄</td></tr>
+              <tr><td>Ctrl + ]</td><td>들여쓰기</td></tr>
+              <tr><td>Ctrl + [</td><td>내어쓰기</td></tr>
+            </tbody>
+          </table>
+
+          <p class="shortcut-section-title">파일 / 편집</p>
+          <table class="shortcut-table">
+            <colgroup><col class="col-key"><col></colgroup>
+            <thead><tr><th>단축키</th><th>기능</th></tr></thead>
+            <tbody>
+              <tr><td>Ctrl + S</td><td>저장 (수동 저장)</td></tr>
+              <tr><td>Ctrl + F</td><td>찾기/바꾸기 창 열기</td></tr>
+            </tbody>
+          </table>
+
+          <p class="shortcut-section-title">에디터 입력 동작 (자동 서식)</p>
+          <table class="shortcut-table">
+            <colgroup><col class="col-key"><col></colgroup>
+            <thead><tr><th>키 입력</th><th>동작</th></tr></thead>
+            <tbody>
+              <tr><td>Enter</td><td>새 단락 생성 (빈 줄이거나 이전 줄이 ***인 경우 서식 자동 정리)</td></tr>
+              <tr><td>Shift + Enter</td><td>일반 Enter와 동일하게 처리</td></tr>
+              <tr><td>. 세 번 연속 (...)</td><td>자동으로 가운뎃점 ···으로 변환</td></tr>
+            </tbody>
+          </table>
+
+          <p class="shortcut-section-title">다이얼로그(창) 공통</p>
+          <p style="font-size:.84rem;color:var(--text-dim);margin-bottom:6px">'새 작품' 생성 창과 '작품 정보 편집' 창 등 일부 프레임리스 다이얼로그에서:</p>
+          <table class="shortcut-table">
+            <colgroup><col class="col-key"><col></colgroup>
+            <thead><tr><th>키</th><th>동작</th></tr></thead>
+            <tbody>
+              <tr><td>Enter / Return</td><td>저장·생성 실행</td></tr>
+              <tr><td>Esc</td><td>취소하고 창 닫기</td></tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <details class="acc">
         <summary>시작 화면 & 작품 리스트<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
@@ -813,6 +873,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
             <li><b>다크 모드</b> — 다크 모드와 라이트 모드로 전환합니다.</li>
             <li><b>잠금 설정</b> — 프로그램에 비밀번호를 걸어 잠글 수 있습니다. (비밀번호는 내 문서\PomoWriter Projects 폴더 안 txt 파일에 저장되며, 잊은 경우 해당 경로에서 확인할 수 있습니다.)</li>
             <li><b>파일 변환</b> — 작품 내용을 한글 파일 또는 PDF 파일로 변환합니다.</li>
+            <li><b>대시보드 ON/OFF</b> — 클릭하여 대시보드 기능을 끄거나 켤 수 있습니다.</li>
             <li><b>PomoWriter 안내</b> — 개발자 정보, 홈페이지 주소, 프로그램 버전 정보를 확인하는 창입니다.</li>
           </ul>
         </div>
@@ -831,6 +892,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
           <ul>
             <li><b>시계 🕐</b> — 열려 있는 에피소드 파일의 버전을 확인하거나 불러옵니다.</li>
             <li><b>돋보기 🔎</b> — 에디터 텍스트를 분석합니다. (대사·지문 비율 / 문장 길이 / 자주 등장하는 단어 / 연속된 지문과 문장 어미 필터)</li>
+            <li><b>맞춤법(📖)</b> — 부산대 검사기를 이용한 맞춤법 검사를 할 수 있습니다.</li>
             <li><b>해</b> — 에디터의 해상도를 조절합니다.</li>
           </ul>
         </div>
