@@ -671,7 +671,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 
     <div class="dl-card">
       <h3>🖥️ PomoWriter for Windows</h3>
-      <p>2026/07/07 버전입니다</p>
+      <p>2026/07/12 버전입니다</p>
       <a class="dl-btn" href="https://drive.google.com/file/d/1CIBxM3Tr8kFhPJ_KnO3pVz5DUrmZNUy0/view?usp=drive_link" target="_blank" rel="noopener">PomoWriter 다운로드</a>
 
       <div class="dl-warn">
@@ -696,7 +696,23 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 
     <div class="acc-list">
       <details class="acc" open>
-        <summary>2026.07.07 업데이트<span class="badge-latest">최신</span><span class="plus" aria-hidden="true">+</span></summary>
+        <summary>2026.07.12 업데이트<span class="badge-latest">최신</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="acc-body">
+          <ul>
+            <li>[캐릭] 프로필 항목들을 커스터마이징 할 수 있는 기능 추가. (항목 설정 버튼)</li>
+            <li>[에피] 에피소드 항목들을 커스터마이징 할 수 있는 기능 추가. (상단의 항목 설정 버튼)</li>
+            <li>[인풋] 모든 회차의 기록을 한눈에 볼 수 있는 <b>모아 보기</b> 버튼 추가. (비교하고자 하는 항목만 체크하여 볼 수 있음.)</li>
+            <li>[로그] 하단에 <b>떡밥 현황</b> 표시 추가. 떡밥 표시 클릭하면 <b>떡밥 리스트</b>만 볼 수 있음.</li>
+            <li>[플롯] <b>기승전결</b> 구조 추가와 항목들을 커스터마이징 기능 추가.</li>
+            <li>[구조] <b>기승전결</b> 구조 추가.</li>
+            <li>[타임] 이모지 추가. 색상 추가.</li>
+            <li>[인풋][출판] 저장 오류 해결.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary>2026.07.07 업데이트<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
             <li><b>[맞춤법 검사]</b> 기능 추가 ( 📖 ).</li>
@@ -851,6 +867,8 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
             <tbody>
               <tr><td>Ctrl + S</td><td>저장 (수동 저장)</td></tr>
               <tr><td>Ctrl + F</td><td>찾기/바꾸기 창 열기</td></tr>
+              <tr><td>Ctrl + Z</td><td>실행 취소 (되돌리기)</td></tr>
+              <tr><td>Ctrl + Shift + Z</td><td>다시 실행 (앞으로 되돌리기)</td></tr>
             </tbody>
           </table>
 
@@ -948,11 +966,11 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
           <ul>
             <li><b>상태</b> — 집필 상태를 구분할 수 있는 항목입니다.</li>
             <li><b>글자수</b> — 회당 글자수를 기록합니다. (바인더에서 에피소드 이름을 1, 01, 001처럼 숫자로 설정해두면 회차 1의 글자수를 자동으로 불러옵니다.)</li>
-            <li><b>여주·남주</b> — 회차마다 등장 인물의 등장 여부를 표시합니다. 상단의 인물 추가·삭제 버튼으로 관리합니다.</li>
+            <li><b>여주·남주</b> — 회차마다 등장 인물의 등장 여부를 표시 기능. 상단의 ➕인물 · 인⚙️물 버튼으로 인물을 추가 및 삭제와 순서 변경이 가능합니다.</li>
             <li><b>장면</b> — 회당 장면 수를 기록합니다. ('***'로 장면을 나누면 자동으로 집계됩니다.)</li>
-            <li><b>등장한 떡밥</b> — 실제로 집필한 떡밥을 기록합니다. 떡밥은 콤마로 구분됩니다. 미회수 떡밥은 분홍색, 회수된 떡밥은 회색으로 표시되며, 클릭하면 상세 설명을 입력할 수 있고, 마우스를 올리면 등장·회수 회차와 설명이 팝업됩니다.</li>
-            <li><b>회수한 떡밥</b> — 실제로 회수된 떡밥을 기록합니다.</li>
-            <li><b>하단 프레임</b> — 회차당 평균 글자수와 작품의 총 글자수를 표시합니다.</li>
+            <li><b>등장한 떡밥</b> — 실제로 집필한 떡밥을 기록. 떡밥 입력 후 엔터를 누르면 떡밥 태그가 생성됩니다. 떡밥 태그 삭제는 [Backspace bar]를 이용. 미회수 떡밥은 분홍색, 회수된 떡밥은 회색으로 표시되며, 클릭하여 상세 설명을 입력, 마우스를 올리면 등장·회수 회차와 설명이 팝업됩니다.</li>
+            <li><b>회수한 떡밥</b> — 실제로 회수된 떡밥을 기록. 떡밥 입력 후 엔터를 누르면 떡밥 태그가 생성됩니다. 떡밥 태그 삭제는 [Backspace bar]를 이용.</li>
+            <li><b>하단 프레임</b> — 회차당 평균 글자수와 작품의 총 글자수를 표시 / 떡밥들의 상태 표시 (클릭하면 전체 떡밥 리스트를 확인 할 수 있습니다).</li>
           </ul>
         </div>
       </details>
@@ -961,11 +979,13 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
         <summary>플롯<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
-            <li><b>박스 추가</b> — 우클릭하여 박스 추가 합니다.</li>
+            <li><b>기승전결/5막 구조</b> — 버튼을 클릭하여 5막 구조와 기승전결 구조로 변경 가능합니다.</li>
+            <li><b>항목 편집</b> — 플롯 박스에 입력할 항목을 추가 및 삭제 또는 순서 변경을 할 수 있습니다.</li>
+            <li><b>박스 추가</b> — 원하는 위치에 우클릭하여 박스 추가.</li>
             <li><b>상세 패널</b> — 박스를 더블 클릭하면 상세 패널을 열고 닫을 수 있습니다.</li>
             <li>박스를 우클릭하면 내용 수정과 색상 변경이 가능합니다.</li>
             <li>박스를 드래그하여 발단/전개/위기/절정/결말에 맞춰 순서를 배치할 수 있습니다.</li>
-            <li>에피소드 순서를 입력하면 에피소드 별로 박스를 묶어서 배치 할 수 있습니다..</li>  
+            <li>에피소드 순서를 입력하면 에피소드 별로 박스를 묶어서 배치 할 수 있습니다.</li>
           </ul>
         </div>
       </details>
@@ -973,12 +993,16 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
       <details class="acc">
         <summary>구조<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
+          <ul>
+            <li><b>기승전결/5막 구조</b> — 기승전결 구조도와 5막 구조도로 변경 가능합니다.</li>
+          </ul>
+          <p><b>5막 구조 사용방법</b></p>
           <ol>
             <li>작품의 스토리를 5문장으로 만들어 상위 5막 구조에 입력합니다.</li>
             <li>그 5문장을 한 문장 당 5개로 쪼개어 중위 5막 구조에 입력합니다.</li>
             <li>중위 5막 구조의 내용을 다시 5개로 쪼개어 하위 5막 구조에 입력합니다.</li>
           </ol>
-          <p>기승전결로 구성한다면 '위기' 또는 '결말' 단계를 비워두면 편합니다. 단편은 중위 단계까지, 초단편은 상위 단계까지만 입력해도 충분하며, 모든 구간을 채우지 않아도 됩니다.</p> 
+          <p>기승전결로 구성한다면 '위기' 또는 '결말' 단계를 비워두면 편합니다. 단편은 중위 단계까지, 초단편은 상위 단계까지만 입력해도 충분하며, 모든 구간을 채우지 않아도 됩니다.</p>
         </div>
       </details>
 
@@ -986,6 +1010,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
         <summary>에피<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
+            <li><b>항목 설정</b> — 5막 구조를 제외한 나머지 항목들을 추가 및 삭제, 순서 변경할 수 있는 기능.</li>
             <li><b>탭 추가</b> — 상단의 [+탭]을 눌러 정리할 에피소드 탭을 추가합니다.</li>
             <li><b>탭 삭제 & 이름 변경</b> — 탭 이름에 우클릭해 삭제하거나 이름을 변경합니다.</li>
             <li><b>탭 순서 변경</b> — 이동할 탭 이름에 우클릭해 좌우로 순서를 옮길 수 있습니다.</li>
@@ -1022,6 +1047,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
         <div class="acc-body">
           <ul>
             <li><b>캐릭터 추가·삭제</b> — 상단의 [캐릭터 추가] 버튼으로 탭을 추가, [현재 캐릭터 삭제]로 제거합니다.</li>
+            <li><b>항목 설정</b> — 캐릭터 프로필과 캐릭터 아크의 상단에 있는 <b>설정</b> 버튼을 통해서 항목을 추가·삭제 및 순서 변경을 할 수 있습니다. (개별적 혹은 전체 작품으로 적용시킬 수 있습니다.)</li>
             <li><b>능력치</b> — +로 그래프를 추가. 모서리 부분을 클릭해 명칭과 수치를 수정합니다.</li>
             <li>캐릭터 이름을 '성 이름' 순으로 띄어 쓰면, 에디터에서 그 이름을 쓸 때마다 캐릭터의 눈동자·머리색이 팝업됩니다. '서양식'에 체크하면 '이름-성' 순으로 인식합니다.</li>
             <li>여주인공과 남주인공으로 설정한 캐릭터의 프로필 사진을 선택하면 [관계]의 '여주인공'과 '남주인공'노드에 프로필 사진이 적용됩니다.</li>
@@ -1203,7 +1229,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
           <p style="margin-top:12px"><b>1. 화면 구성</b></p>
           <ul>
             <li><b>왼쪽 – 작품 목록</b> : 내가 읽고 기록 중인 작품들</li>
-            <li><b>가운데 위 – 회차 바</b> : 선택한 작품의 회차 목록 (기본 정보 + 1화~10화)</li>
+            <li><b>가운데 위 – 회차 바</b> : 선택한 작품의 회차 목록 (기본 정보 + 모아보기 + 1화~10화)</li>
             <li><b>오른쪽 – 기록 영역</b> : 선택한 회차에 내용을 입력하는 곳</li>
           </ul>
 
