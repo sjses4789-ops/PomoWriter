@@ -14,7 +14,7 @@
 
 <!-- 검색 결과 사이트명 / 설명 -->
 <title>PomoWriter - 웹소설 무료 집필 프로그램</title>
-<meta name="description" content="집필, 자료 수집, 메모, 투고&수익 관리를 하나의 프로그램으로. 오로지 집필에만 집중하세요. · 33가지 보조 툴과 기능 · 기획부터 출간까지 PomoWriter와 함께.">
+<meta name="description" content="집필, 자료 수집, 메모, 투고&수익 관리를 하나의 프로그램으로. 오로지 집필에만 집중하세요. · 36가지 보조 툴과 기능 · 기획부터 출간까지 PomoWriter와 함께.">
 <meta name="application-name" content="PomoWriter">
 <meta name="author" content="PomoWriter">
 <meta name="keywords" content="웹소설, 웹소설 프로그램, 집필 프로그램, 소설 쓰기, 소설 프로그램, 소설 집필 프로그램, 집필, 집필 도구, 웹소설 작가, 웹소설 집필, 소설 쓰는 프로그램, 뽀모도로 집필, 무료 집필 프로그램, 웹소설 기획, 시놉시스 작성, 캐릭터 정리, 플롯 정리, 원고 관리, 작가 프로그램, PomoWriter, 포모라이터">
@@ -25,7 +25,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PomoWriter">
 <meta property="og:title" content="PomoWriter - 웹소설 무료 집필 프로그램">
-<meta property="og:description" content="집필, 자료 수집, 메모, 투고&수익 관리를 하나의 프로그램으로. 오로지 집필에만 집중하세요. 33가지 보조 툴과 기능.">
+<meta property="og:description" content="집필, 자료 수집, 메모, 투고&수익 관리를 하나의 프로그램으로. 오로지 집필에만 집중하세요. 36가지 보조 툴과 기능.">
 <meta property="og:url" content="https://pomowriter.oopy.io">
 <meta property="og:image" content="https://raw.githubusercontent.com/sjses4789-ops/PomoWriter/main/logo.png">
 <meta property="og:locale" content="ko_KR">
@@ -50,7 +50,7 @@
   "name": "PomoWriter",
   "alternateName": "포모라이터",
   "url": "https://pomowriter.oopy.io",
-  "description": "웹소설 작가를 위한 무료 집필 프로그램. 뽀모도로 타이머, 시놉, 투고, 수익 관리 등 33가지 보조 툴 제공.",
+  "description": "웹소설 작가를 위한 무료 집필 프로그램. 뽀모도로 타이머, 시놉, 투고, 수익 관리 등 36가지 보조 툴 제공.",
   "keywords": "웹소설, 웹소설 프로그램, 집필 프로그램, 소설 쓰기, 소설 프로그램, 소설 집필 프로그램, 집필, 집필 도구, 웹소설 작가, 무료 집필 프로그램, PomoWriter, 포모라이터",
   "publisher": {
     "@type": "Organization",
@@ -64,286 +64,362 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Pretendard:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+<link href="https://webfontworld.github.io/score/SCDream.css" rel="stylesheet">
 <style>
+/* ─── 팔레트 ─────────────────────────────────────────
+   Editorial / 세로 그리드 미니멀 스타일
+   포인트: 베이지에 가까운 주황-황토 (#B87A45 → 베이지 섞임)
+─────────────────────────────────────────────────────── */
 :root{
-  --beige-lt:   #FAF7F2;
-  --gray-wn:    #EDEBE9;
-  --surface:    #F5F1EB;
-  --paper:      #FFFFFF;
-  --text:       #524C46;
-  --text-dim:   #9A9490;
-  --divider:    #D1CDC7;
-  --divider-lt: #E4E0DA;
-  --focus:      #D98880;
-  --focus-deep: #C47060;
-  --green:      #5A9A78;
-  --amber:      #B08840;
-  --brown:      #7A6A5A;
-  --blue:       #5A7A8A;
-  --dk-bg:      #2D2926;
-  --dk-raised:  #3A3532;
-  --dk-text:    #EDE8E3;
-  --dk-border:  #4A4340;
-
-  --serif: 'Gowun Batang', 'Nanum Myeongjo', Batang, serif;
-  --sans:  'Pretendard', 'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --bg:      #F2EFE8;
+  --warm:    #FDFCF8;
+  --mist:    #EAE6DD;
+  --rule:    #D4CFC5;
+  --ink:     #24201A;
+  --dim:     #92897F;
+  --hi:      #B8935C;   /* 베이지빛 주황-황토 */   /* 베이지 섞인 주황-황토 */
+  --hi2:     #9A7444;
+  --dk:      #1C1814;
+  --dk-sub:  #28221C;
+  --dk-bd:   #3C352C;
+  --dk-t:    #F2EFE8;
+  --sans:'SCDream','S-Core Dream','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --serif:'SCDream','S-Core Dream','Nanum Myeongjo',serif;
 }
+
+/* ─── 리셋 ──────────────────────────────────────────── */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   font-family:var(--sans);
-  background:var(--beige-lt);
-  color:var(--text);
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
+  background:var(--bg);color:var(--ink);
+  line-height:1.7;-webkit-font-smoothing:antialiased;
 }
-::selection{background:var(--focus);color:#fff}
+a{color:inherit;text-decoration:none}
 img{max-width:100%}
-
-/* ───────── 헤더 ───────── */
-header{
-  position:sticky;top:0;z-index:60;
-  background:rgba(250,247,242,.9);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--divider-lt);
-}
-.nav{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:1.25rem;color:var(--text);text-decoration:none}
-.logo-img{width:26px;height:26px;border-radius:7px;object-fit:cover;display:block}
-.nav-links{display:flex;gap:26px;align-items:center}
-.nav-links a{color:var(--text-dim);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-.nav-links a:focus-visible,.btn:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:4px}
-.nav-cta{background:var(--focus);color:#fff !important;padding:8px 18px;border-radius:999px;font-weight:600;transition:background .2s}
-.nav-cta:hover{background:var(--focus-deep)}
-@media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
-
-/* ───────── 히어로 ───────── */
-.hero{max-width:1100px;margin:0 auto;padding:72px 24px 56px;text-align:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.14em;color:var(--focus-deep);font-weight:600;margin-bottom:18px;text-transform:uppercase}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--focus)}
-h1{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,2.95rem);font-weight:700;line-height:1.36;letter-spacing:-.01em;margin:0 auto 18px;max-width:30ch}
-h1 em{font-style:normal;color:var(--focus-deep);position:relative}
-h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:rgba(217,136,128,.22);z-index:-1}
-.hero p{color:var(--text-dim);font-size:1.04rem;max-width:48ch;margin:0 auto 30px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-family:var(--sans);font-size:.97rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .2s}
-.btn-primary{background:var(--focus);color:#fff;box-shadow:0 4px 14px rgba(217,136,128,.35)}
-.btn-primary:hover{background:var(--focus-deep);transform:translateY(-1px)}
-.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--divider)}
-.btn-ghost:hover{background:var(--gray-wn)}
-.hero-note{margin-top:14px;font-size:.8rem;color:var(--text-dim)}
-.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;justify-content:center}
-.hero-tag{font-size:.74rem;color:var(--brown);background:var(--gray-wn);border:1px solid var(--divider-lt);padding:4px 10px;border-radius:999px}
-
+::selection{background:var(--hi);color:#fff}
 @media(prefers-reduced-motion:reduce){*{transition:none !important}}
 
-/* ───────── 섹션 공통 ───────── */
-section{scroll-margin-top:80px}
-.section-inner{max-width:1100px;margin:0 auto;padding:76px 24px}
-.section-head{max-width:580px;margin-bottom:14px}
-.section-head h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.05rem);font-weight:700;line-height:1.4;margin:10px 0 12px}
-.section-head p{color:var(--text-dim)}
+/* ─── 헤더: 얇은 선 하나, 수평 레일 ────────────────── */
+header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(242,239,232,.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--rule);
+}
+.nav{
+  max-width:1280px;margin:0 auto;
+  padding:0 40px;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--serif);font-weight:700;font-size:.97rem;
+  color:var(--ink);letter-spacing:.01em;
+}
+.logo-img{width:22px;height:22px;border-radius:4px;object-fit:cover}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{
+  font-size:.78rem;font-weight:400;color:var(--dim);
+  transition:color .2s;letter-spacing:.04em;text-transform:uppercase;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:focus-visible{outline:1px solid var(--hi);outline-offset:4px}
+.nav-cta{
+  color:var(--hi) !important;font-weight:600;
+  font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;
+  border-bottom:1.5px solid var(--hi);padding-bottom:1px;
+  transition:color .2s,border-color .2s;
+}
+.nav-cta:hover{color:var(--hi2) !important;border-color:var(--hi2)}
+@media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
 
-/* ───────── 기능: 33가지 보조 툴 카드 그리드 ───────── */
-.feat-section{background:var(--surface);border-top:1px solid var(--divider-lt);border-bottom:1px solid var(--divider-lt)}
+/* ─── 히어로: 에디토리얼 레이아웃 ─────────────────── */
+.hero{
+  max-width:1280px;margin:0 auto;
+  padding:88px 40px 72px;
+  border-bottom:1px solid var(--rule);
+}
+@media(max-width:900px){.hero{padding:64px 28px 56px}}
+.eyebrow{
+  display:block;
+  font-size:.68rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:28px;
+}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,4.5vw,3.6rem);
+  font-weight:700;line-height:1.22;letter-spacing:-.01em;
+  color:var(--ink);
+}
+h1 em{font-style:italic;color:var(--hi)}
+.hero>div>p{
+  font-size:.92rem;color:var(--dim);
+  line-height:1.82;margin-top:28px;max-width:44ch;
+}
 
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hero-actions{
+  display:flex;flex-direction:row;gap:12px;flex-wrap:wrap;
+  margin:28px 0 24px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:.85rem;font-weight:550;
+  cursor:pointer;border:none;transition:all .18s;
+  letter-spacing:.02em;
+}
+.btn-primary{
+  background:var(--hi);color:#fff;
+  padding:13px 28px;
+  width:fit-content;
+}
+.btn-primary:hover{background:var(--hi2)}
+.btn-ghost{
+  background:transparent;color:var(--ink);
+  border:1px solid var(--rule);
+  padding:12px 28px;width:fit-content;
+}
+.btn-ghost:hover{border-color:var(--ink)}
+.hero-note{font-size:.74rem;color:var(--dim);letter-spacing:.02em}
+.hero-tags{
+  display:flex;flex-direction:column;gap:0;
+  border-top:1px solid var(--rule);margin-top:32px;
+}
+.hero-tag{
+  font-size:.76rem;color:var(--dim);
+  padding:10px 0;
+  border-bottom:1px solid var(--rule);
+  letter-spacing:.04em;
+}
+
+/* ─── 섹션 공통 ─────────────────────────────────────── */
+section{scroll-margin-top:66px}
+.section-inner{max-width:1280px;margin:0 auto;padding:80px 40px}
+@media(max-width:760px){.section-inner{padding:60px 28px}}
+.section-head{margin-bottom:48px}
+.section-head .eyebrow{margin-bottom:16px}
+.section-head h2{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  font-weight:700;line-height:1.2;letter-spacing:-.01em;
+  margin:0 0 12px;
+}
+.section-head p{color:var(--dim);font-size:.9rem;max-width:48ch;line-height:1.7}
+
+/* ─── 기능 카드: 선 그리드, 배경 없음 ──────────────── */
+.feat-section{
+  background:var(--warm);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.feat-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-left:1px solid var(--rule);
+}
 @media(max-width:760px){.feat-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.feat-grid{grid-template-columns:1fr}}
-
 .feat-card{
-  background:var(--paper);border:1px solid var(--divider-lt);border-radius:14px;
-  padding:22px 22px 18px;transition:transform .25s, box-shadow .25s;
+  padding:24px 22px 20px;
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  background:transparent;
+  transition:background .18s;
 }
-.feat-card:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(82,76,70,.09)}
-.feat-top{display:flex;align-items:flex-start;gap:14px}
+.feat-card:hover{background:var(--mist)}
+.feat-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:10px}
 .feat-icon{
-  flex:none;width:42px;height:42px;border-radius:11px;background:var(--gray-wn);
-  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+  flex:none;width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.05rem;color:var(--hi);
+  border:1px solid var(--rule);
 }
-.feat-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
-.feat-card .tagline{font-size:.87rem;color:var(--text-dim)}
+.feat-card h3{
+  font-family:var(--serif);
+  font-size:.96rem;font-weight:700;
+  line-height:1.3;color:var(--ink);
+}
+.feat-card .tagline{font-size:.8rem;color:var(--dim);line-height:1.55;margin-top:6px}
 
-/* ───────── 스크린샷 갤러리 (좌우 드래그 스크롤) ───────── */
-.gallery-section{padding:0 0 80px;overflow:hidden}
+/* ─── 갤러리 ─────────────────────────────────────────── */
+.gallery-section{
+  padding:0 0 80px;overflow:hidden;
+  border-bottom:1px solid var(--rule);
+}
 .gallery-wrap{position:relative}
-
-.gallery-fade{
-  position:absolute;top:0;bottom:0;width:220px;z-index:5;pointer-events:none;
-}
+.gallery-fade{position:absolute;top:0;bottom:0;width:160px;z-index:5;pointer-events:none}
 .gallery-fade-left{
   left:0;
-  background:linear-gradient(to right,
-    var(--beige-lt) 0%,
-    var(--beige-lt) 28%,
-    rgba(250,247,242,.85) 50%,
-    rgba(250,247,242,.45) 72%,
-    rgba(250,247,242,0) 100%);
+  background:linear-gradient(to right,var(--bg) 0%,var(--bg) 18%,rgba(242,239,232,.75) 52%,rgba(242,239,232,0) 100%);
 }
 .gallery-fade-right{
   right:0;
-  background:linear-gradient(to left,
-    var(--beige-lt) 0%,
-    var(--beige-lt) 28%,
-    rgba(250,247,242,.85) 50%,
-    rgba(250,247,242,.45) 72%,
-    rgba(250,247,242,0) 100%);
+  background:linear-gradient(to left,var(--bg) 0%,var(--bg) 18%,rgba(242,239,232,.75) 52%,rgba(242,239,232,0) 100%);
 }
-@media(max-width:880px){.gallery-fade{width:140px}}
-@media(max-width:600px){.gallery-fade{width:90px}}
-
+@media(max-width:880px){.gallery-fade{width:100px}}
+@media(max-width:600px){.gallery-fade{width:60px}}
 .gallery-arrow{
   position:absolute;top:50%;transform:translateY(-50%);z-index:10;
-  width:44px;height:44px;border-radius:50%;border:1px solid var(--divider-lt);
-  background:var(--paper);color:var(--text);
+  width:38px;height:38px;
+  border:1px solid var(--rule);
+  background:var(--bg);color:var(--ink);
   display:flex;align-items:center;justify-content:center;
-  font-size:1.4rem;line-height:1;cursor:pointer;
-  box-shadow:0 6px 18px rgba(82,76,70,.14);
-  transition:background .2s, transform .2s, box-shadow .2s, opacity .2s;
+  font-size:1.1rem;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s;
 }
-.gallery-arrow:hover{background:var(--focus);color:#fff;box-shadow:0 8px 22px rgba(217,136,128,.3)}
-.gallery-arrow:active{transform:translateY(-50%) scale(.94)}
-.gallery-arrow-left{left:14px}
-.gallery-arrow-right{right:14px}
-.gallery-arrow.is-hidden{opacity:0;pointer-events:none}
-@media(max-width:600px){
-  .gallery-arrow{width:36px;height:36px;font-size:1.2rem}
-  .gallery-arrow-left{left:6px}
-  .gallery-arrow-right{right:6px}
-}
-
+.gallery-arrow:hover{background:var(--hi);color:#fff;border-color:var(--hi)}
+.gallery-arrow:active{transform:translateY(-50%) scale(.92)}
+.gallery-arrow-left{left:12px}
+.gallery-arrow-right{right:12px}
+.gallery-arrow.is-hidden{opacity:0;pointer-events:none;transition:opacity .2s}
+@media(max-width:600px){.gallery-arrow{width:32px;height:32px;font-size:1rem}.gallery-arrow-left{left:4px}.gallery-arrow-right{right:4px}}
 .gallery-grid{
-  display:flex;
-  gap:16px;
-  overflow-x:auto;
-  scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch;
-  cursor:grab;
-  padding:4px 24px 4px calc(50% - 550px);
+  display:flex;gap:10px;overflow-x:auto;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;cursor:grab;
+  padding:4px 40px 4px calc(50% - 640px);
   scrollbar-width:none;
 }
-@media(max-width:1100px){.gallery-grid{padding-left:24px}}
+@media(max-width:1280px){.gallery-grid{padding-left:40px}}
 .gallery-grid.dragging{cursor:grabbing;scroll-behavior:auto}
 .gallery-grid::-webkit-scrollbar{display:none}
-
 .gallery-item{
-  position:relative;border-radius:14px;overflow:hidden;cursor:zoom-in;
-  border:1px solid var(--divider-lt);background:var(--paper);
-  box-shadow:0 6px 18px rgba(82,76,70,.07);
-  transition:transform .25s, box-shadow .25s;
-  flex:none;
-  width:21vw;
-  aspect-ratio:4/3;
+  position:relative;overflow:hidden;cursor:zoom-in;
+  border:1px solid var(--rule);background:var(--warm);
+  transition:transform .2s,border-color .2s;
+  flex:none;width:21vw;aspect-ratio:4/3;
 }
 @media(max-width:1100px){.gallery-item{width:26vw}}
 @media(max-width:880px){.gallery-item{width:36vw}}
 @media(max-width:600px){.gallery-item{width:62vw}}
-.gallery-item:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(82,76,70,.13)}
+.gallery-item:hover{transform:translateY(-2px);border-color:var(--dim)}
 .gallery-item img{display:block;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;user-select:none}
 .gallery-item .zoom-hint{
-  position:absolute;right:10px;bottom:10px;width:30px;height:30px;border-radius:50%;
-  background:rgba(45,41,38,.55);color:#fff;display:flex;align-items:center;justify-content:center;
-  font-size:.95rem;opacity:0;transition:opacity .2s;pointer-events:none;
+  position:absolute;right:8px;bottom:8px;
+  width:26px;height:26px;
+  background:rgba(28,24,20,.6);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.82rem;opacity:0;transition:opacity .18s;pointer-events:none;
 }
 .gallery-item:hover .zoom-hint{opacity:1}
-
-.gallery-item.is-open{
-  position:fixed;z-index:200;cursor:zoom-out;
-  box-shadow:0 30px 70px rgba(0,0,0,.35);
-}
-
-.gallery-backdrop{
-  position:fixed;inset:0;background:rgba(45,41,38,.65);backdrop-filter:blur(3px);
-  opacity:0;pointer-events:none;transition:opacity .25s;z-index:190;
-}
+.gallery-item.is-open{position:fixed;z-index:200;cursor:zoom-out;box-shadow:0 32px 80px rgba(0,0,0,.28)}
+.gallery-backdrop{position:fixed;inset:0;background:rgba(28,24,20,.7);opacity:0;pointer-events:none;transition:opacity .22s;z-index:190}
 .gallery-backdrop.show{opacity:1;pointer-events:auto;cursor:zoom-out}
+@media(prefers-reduced-motion:reduce){.gallery-item,.gallery-item.is-open,.gallery-backdrop{transition:none !important}}
 
-@media(prefers-reduced-motion:reduce){
-  .gallery-item,.gallery-item.is-open,.gallery-backdrop{transition:none !important}
-}
-
-/* ───────── 다운로드 ───────── */
-.download{background:var(--dk-bg);color:var(--dk-text)}
+/* ─── 다운로드: 다크, 심플 ──────────────────────────── */
+.download{background:var(--dk);color:var(--dk-t)}
 .download .section-inner{text-align:center}
-.download .section-head{margin:0 auto 14px;text-align:center}
-.download .section-head h2{color:var(--dk-text)}
-.download .section-head p{color:#A39B92}
+.download .section-head{margin:0 auto 32px;text-align:center}
+.download .section-head .eyebrow{color:rgba(242,239,232,.4)}
+.download .section-head h2{color:var(--dk-t);font-family:var(--serif)}
+.download .section-head p{color:rgba(242,239,232,.42)}
 .dl-card{
-  background:var(--dk-raised);border:1px solid var(--dk-border);border-radius:18px;
-  padding:34px 32px;max-width:560px;margin:0 auto;text-align:center;
+  background:var(--dk-sub);
+  border:1px solid var(--dk-bd);
+  padding:36px 32px;max-width:520px;margin:0 auto;text-align:center;
 }
-.dl-card h3{font-size:1.15rem;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:10px}
-.dl-card p{font-size:.9rem;color:#C4BAA9;margin-bottom:22px}
+.dl-card h3{
+  font-size:1rem;font-weight:600;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  color:var(--dk-t);font-family:var(--serif);
+}
+.dl-card p{font-size:.86rem;color:rgba(242,239,232,.42);margin-bottom:22px;line-height:1.75}
 .dl-btn{
-  display:inline-flex;align-items:center;gap:8px;background:var(--focus);color:#fff;text-decoration:none;
-  padding:13px 28px;border-radius:999px;font-weight:700;font-size:.97rem;transition:background .2s;
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--hi);color:#fff;
+  padding:12px 28px;
+  font-size:.85rem;font-weight:550;letter-spacing:.02em;
+  transition:background .18s;border:none;cursor:pointer;
 }
-.dl-btn:hover{background:var(--focus-deep)}
+.dl-btn:hover{background:var(--hi2)}
 .dl-warn{
-  margin-top:24px;background:rgba(217,136,128,.1);border:1px solid rgba(217,136,128,.25);
-  border-radius:12px;padding:16px 18px;font-size:.82rem;color:#D9A8A2;line-height:1.8;text-align:left;
+  margin-top:24px;
+  border-top:1px solid var(--dk-bd);
+  padding-top:18px;
+  font-size:.78rem;color:rgba(242,239,232,.38);line-height:1.85;text-align:left;
 }
-.dl-warn b{color:#E8C2BC}
+.dl-warn b{color:rgba(242,239,232,.6)}
 
-/* ───────── 아코디언 공통 (업데이트로그/방침) ───────── */
-.acc-list{border-top:1px solid var(--divider-lt)}
-details.acc{border-bottom:1px solid var(--divider-lt)}
+/* ─── 아코디언: 선 하나, 텍스트만 ─────────────────── */
+.acc-list{border-top:1px solid var(--rule)}
+details.acc{border-bottom:1px solid var(--rule)}
 details.acc summary{
-  cursor:pointer;list-style:none;padding:18px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;
-  font-weight:700;font-size:.96rem;
+  cursor:pointer;list-style:none;
+  padding:18px 0;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-family:var(--serif);font-weight:700;font-size:.95rem;
+  color:var(--ink);transition:color .18s;
 }
+details.acc summary:hover{color:var(--hi)}
 details.acc summary::-webkit-details-marker{display:none}
-details.acc summary .plus{font-size:1.3rem;color:var(--text-dim);font-weight:400;transition:transform .2s;flex:none}
-details.acc[open] summary .plus{transform:rotate(45deg)}
-details.acc .acc-body{padding:0 4px 20px;font-size:.88rem;color:var(--text-dim)}
+details.acc summary .plus{
+  flex:none;width:18px;height:18px;
+  color:var(--dim);font-size:1rem;font-weight:300;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .22s,color .18s;
+}
+details.acc[open] summary .plus{transform:rotate(45deg);color:var(--hi)}
+details.acc .acc-body{
+  padding:0 0 20px;
+  font-size:.87rem;color:var(--dim);line-height:1.78;
+}
 .acc-body ul{margin-left:18px;display:flex;flex-direction:column;gap:6px}
 .acc-body ol{margin-left:18px;display:flex;flex-direction:column;gap:6px}
-.acc-body p{margin:8px 0}
-.acc-body b{color:var(--text)}
-.shortcut-table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:.86rem;table-layout:fixed}
-.shortcut-table th{background:var(--gray-wn);color:var(--text);font-weight:700;padding:8px 14px;text-align:left;border-bottom:2px solid var(--divider)}
-.shortcut-table td{padding:8px 14px;border-bottom:1px solid var(--divider-lt);color:var(--text-dim);word-break:keep-all}
+.acc-body p{margin:7px 0}
+.acc-body b{color:var(--ink);font-weight:600}
+.acc-body ul ul{margin-top:5px}
+
+/* 단축키 표 */
+.shortcut-table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:.83rem;table-layout:fixed}
+.shortcut-table th{
+  background:transparent;color:var(--dim);font-weight:600;
+  padding:9px 12px;text-align:left;
+  border-bottom:1px solid var(--rule);
+  font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.shortcut-table td{padding:9px 12px;border-bottom:1px solid var(--rule);color:var(--dim);word-break:keep-all}
 .shortcut-table col.col-key{width:220px}
-.shortcut-table td:first-child{font-family:'IBM Plex Sans KR',monospace;font-weight:600;color:var(--focus-deep);white-space:nowrap}
+.shortcut-table td:first-child{font-family:'IBM Plex Sans KR',monospace;font-weight:550;color:var(--hi);white-space:nowrap}
 .shortcut-table tr:last-child td{border-bottom:none}
-.shortcut-table tr:hover td{background:var(--surface)}
-.shortcut-section-title{font-size:.82rem;font-weight:700;color:var(--brown);letter-spacing:.04em;margin:14px 0 4px;text-transform:uppercase}
+.shortcut-table tr:hover td{color:var(--ink)}
+.shortcut-section-title{
+  font-size:.7rem;font-weight:600;color:var(--dim);
+  letter-spacing:.14em;text-transform:uppercase;margin:20px 0 6px;
+}
 .badge-latest{
-  font-size:.68rem;background:var(--focus);color:#fff;padding:2px 8px;border-radius:999px;
-  font-weight:700;letter-spacing:.02em;margin-left:8px;
+  display:inline-block;font-size:.64rem;
+  background:transparent;color:var(--hi);
+  border:1px solid var(--hi);
+  padding:1px 7px;
+  font-weight:600;letter-spacing:.04em;margin-left:8px;vertical-align:middle;
 }
 
-/* ───────── 버그 신고 ───────── */
+/* ─── 버그 신고: 선만 ───────────────────────────────── */
 .report-card{
-  background:var(--paper);border:1px solid var(--divider-lt);border-radius:16px;
-  padding:30px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+  background:transparent;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  padding:32px 0;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
 }
-.report-card p{color:var(--text-dim);font-size:.9rem;max-width:42ch}
+.report-card p{color:var(--dim);font-size:.88rem;max-width:44ch;line-height:1.7}
+.report-panel{max-height:0;overflow:hidden;transition:max-height .4s ease,margin-top .4s ease;margin-top:0}
+.report-panel.open{max-height:820px;margin-top:16px}
+.report-panel iframe{width:100%;height:780px;border:none;border:1px solid var(--rule);display:block}
 
-.report-panel{
-  max-height:0;overflow:hidden;
-  transition:max-height .45s ease, margin-top .45s ease;
-  margin-top:0;
+/* ─── 푸터: 얇은 상단 선, 심플 ─────────────────────── */
+footer{border-top:1px solid var(--rule);background:var(--bg)}
+.foot-inner{
+  max-width:1280px;margin:0 auto;padding:28px 40px;
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:18px;flex-wrap:wrap;font-size:.77rem;color:var(--dim);
 }
-.report-panel.open{
-  max-height:820px;
-  margin-top:16px;
-}
-.report-panel iframe{
-  width:100%;height:780px;border:none;
-  border-radius:14px;border:1px solid var(--divider-lt);
-  display:block;
-}
-
-/* ───────── 푸터 ───────── */
-footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
-.foot-inner{max-width:1100px;margin:0 auto;padding:32px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;font-size:.82rem;color:var(--text-dim)}
-.foot-inner a{color:var(--text-dim);text-decoration:none}
-.foot-inner a:hover{color:var(--text)}
-.foot-legal{max-width:520px;font-size:.78rem;line-height:1.9;color:var(--text-dim)}
-.foot-legal b{color:var(--text)}
+.foot-inner a{color:var(--dim);transition:color .18s}
+.foot-inner a:hover{color:var(--ink)}
+.foot-legal{max-width:520px;font-size:.73rem;line-height:1.92;color:var(--dim)}
+.foot-legal b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -368,16 +444,10 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
   <div>
     <span class="eyebrow" style="font-size:.88rem">웹소설 작가를 위한 무료 프로그램</span>
     <h1>집필, 자료 수집, 메모, 투고&수익 관리를<br>하나의 프로그램으로.<br>오로지 <em>집필에만</em> 집중하세요.</h1>
-    <p>PomoWriter는 뽀모도로와 집필 그리고 시놉부터 수익 관리까지<br>33가지 기능을 담은 웹소설 작가용 올인원 프로그램입니다.<br>AI 유출 걱정 없이, 파일 날림 걱정 없이<br>작가님의 집필 생활에 도움이 되는 것에만 집중했어요.</p>
+    <p>PomoWriter는 뽀모도로와 집필 그리고 시놉부터 수익 관리까지 36가지 기능을 담은 웹소설 작가용 올인원 프로그램입니다. AI 유출 걱정 없이, 파일 날림 걱정 없이 작가님의 집필 생활에 도움이 되는 것에만 집중했어요.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#download">무료 다운로드</a>
       <a class="btn btn-ghost" href="#features">보조 기능 둘러보기</a>
-    </div>
-    <div class="hero-tags">
-      <span class="hero-tag">뽀모도로</span>
-      <span class="hero-tag">시놉·로그·플롯</span>
-      <span class="hero-tag">구글 드라이브 동기화</span>
-      <span class="hero-tag">투고·수익 관리</span>
     </div>
     <p class="hero-note">made by GGozil · Windows 데스크톱 무료 배포</p>
   </div>
@@ -687,12 +757,12 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 </div>
 <div class="gallery-backdrop" id="galleryBackdrop"></div>
 
-<!-- 기능: 33가지 보조 툴 -->
+<!-- 기능: 36가지 보조 툴 -->
 <section id="features" class="feat-section">
   <div class="section-inner">
     <div class="section-head">
-      <span class="eyebrow">33 Tools</span>
-      <h2>33가지 보조 툴과 기능</h2>
+      <span class="eyebrow">36 Tools</span>
+      <h2>36가지 보조 툴과 기능</h2>
      
     </div>
 
@@ -704,14 +774,13 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 <section id="download" class="download">
   <div class="section-inner">
     <div class="section-head">
-      <span class="eyebrow" style="color:var(--focus)">Download</span>
+      <span class="eyebrow" style="color:var(--hi)">Download</span>
       <h2>기획부터 출간까지 PomoWriter와 함께</h2>
-      <p>Windows에서 무료로 사용할 수 있습니다.</p>
     </div>
 
     <div class="dl-card">
       <h3>🖥️ PomoWriter for Windows</h3>
-      <p>2026/07/23 버전입니다</p>
+      <p>2026/08/20 버전입니다</p>
       <a class="dl-btn" href="https://drive.google.com/file/d/1CIBxM3Tr8kFhPJ_KnO3pVz5DUrmZNUy0/view?usp=drive_link" target="_blank" rel="noopener">PomoWriter 다운로드</a>
 
       <div class="dl-warn">
@@ -736,7 +805,74 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 
     <div class="acc-list">
       <details class="acc" open>
-        <summary>2026.07.23 업데이트<span class="badge-latest">최신</span><span class="plus" aria-hidden="true">+</span></summary>
+        <summary>2026.08.20 업데이트<span class="badge-latest">최신</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="acc-body">
+          <ul>
+            <li><b>[개인PC] 모드, [공용PC] 모드 추가.</b>
+              <ul>
+                <li><b>[개인PC] 모드</b> — 프라이버시가 보장되는 환경에서 사용을 권장하는 모드. 로컬 데이터를 중심으로 사용하며 로그인 정보가 유지됩니다. [경로 수정] 메뉴를 통해 외장하드나 USB에 위치한 데이터도 사용할 수 있습니다.</li>
+                <li><b>[공용PC] 모드</b> — 프라이버시를 보장받기 어려운 환경에서 사용을 권장하는 모드. 구글 드라이브 또는 USB에 저장된 데이터만 사용하며 로컬에 작품 데이터와 로그인 데이터를 남기지 않습니다. 프로그램 종료 시 데이터 유실을 막기 위해 강제로 동기화를 진행합니다.</li>
+                <li>[공용PC] 모드에서 [구글 드라이브] 선택 시, 로그인한 계정의 구글 드라이브에 업로드된 비밀번호 입력창이 팝업됩니다. 비밀번호를 잊어버렸을 경우 해당 구글 드라이브의 PomoWriter Projects 폴더 안 비밀번호 파일을 확인하세요. (업로드된 비밀번호 파일이 없거나, 잠금설정이 해제한 상태라면 입력창이 나타나지 않습니다.)</li>
+              </ul>
+            </li>
+            <li><b>로컬·USB 데이터와 구글 드라이브 데이터 버전 비교 및 알림 기능 추가.</b>
+              <ul>
+                <li>[개인PC] 또는 [공용PC-USB] 모드로 작품 선택 시, 구글 드라이브에 업로드된 작품의 저장 시간과 비교하여 최신 버전 여부를 확인합니다.</li>
+                <li>로컬·USB 데이터보다 구글 드라이브 데이터가 더 최신일 경우 알림창이 나타납니다. 알림창을 통해 최신 버전을 다운로드해 파일을 교체하거나, '구글 열기' 폴더에 따로 저장하여 작품창을 열 수 있습니다.</li>
+              </ul>
+            </li>
+            <li><b>[로그인] 순서 변경.</b> — 데이터 동기화를 위해 작품창 팝업 전에 항상 로그인을 먼저 진행하도록 변경하였습니다.</li>
+            <li><b>[기호 자동 변환] 기능과 [대치어 변환] 기능 추가.</b>
+              <ul>
+                <li>입력한 기호와 대치어가 설정한 값으로 자동 변환되는 기능입니다.</li>
+                <li>메인 메뉴(구름 모양 아이콘) → [자동 변환 설정]에서 기호 및 대치어 변환을 추가·삭제·ON/OFF할 수 있습니다.</li>
+                <li>기호 변환 기본 목록: 큰따옴표, 말줄임표, 방향 표시 등.</li>
+              </ul>
+            </li>
+            <li><b>[마인], [관계] — 캔버스 크기를 무한으로 확대할 수 있도록 수정.</b>
+              <ul>
+                <li>고정되어 있던 배경 영역 크기가 노드와 스크롤 이동에 따라 확대됩니다.</li>
+                <li>늘어난 영역에 노드가 없을 경우 자동으로 크기가 줄어들어 불필요한 확대를 방지합니다.</li>
+              </ul>
+            </li>
+            <li><b>[대시보드]에 [떡밥 현황] 추가.</b> — 수거된 떡밥과 수거되지 않은 떡밥의 수와 리스트를 확인할 수 있습니다.</li>
+            <li><b>바인더와 에디터 상단의 아이콘 변경 및 디자인 수정.</b>
+              <ul>
+                <li>바인더 아이콘을 변경하여 폴더와 페이지를 더 직관적으로 구분할 수 있도록 하였습니다.</li>
+                <li>에디터 상단 아이콘을 변경하여 기능을 더 직관적으로 구분할 수 있도록 하였습니다.</li>
+                <li>둥근 스타일을 직각 스타일로 변경하고 불필요한 도형을 제거하여 눈의 피로감을 줄였습니다.</li>
+              </ul>
+            </li>
+            <li><b>프로그램 종료 시 [오늘도 수고했어] 메시지 팝업 설정.</b></li>
+            <li><b>[단어] — 대체 단어 데이터 소량 추가.</b></li>
+            <li><b>[일정] — 장기 일정의 디데이 표시 방식 변경.</b>
+              <ul>
+                <li>시작 날짜까지는 디데이를 카운팅하고, 기간이 시작된 이후에는 남은 날짜를 'N일 남음'으로 표시합니다.</li>
+                <li>기존에는 기간 중에도 D-DAY로만 표시되어 종료일을 알 수 없었던 방식에서 개선되었습니다.</li>
+              </ul>
+            </li>
+            <li><b>뽀모도로 집중 음악 음량 조절 기능 추가.</b> — 🎵 위에 마우스 포인터를 올린 상태에서 휠을 움직여 음량을 조절할 수 있습니다.</li>
+            <li><b>서브 메뉴 상단에 도움말(?) 버튼 추가.</b> — [사용 방법] 메뉴를 찾아가지 않아도 각 서브 메뉴에서 바로 사용 방법을 확인할 수 있습니다.</li>
+            <li><b>[바인더] 상단과 [트릿] 하단에 목록 추가·삭제 버튼 및 자동 번호 매기기 기능 추가.</b>
+              <ul>
+                <li>[바인더]: 우클릭으로만 추가할 수 있던 에피소드·폴더를 상단 버튼으로도 간단하게 추가할 수 있도록 버튼을 추가했습니다.</li>
+                <li>[트릿]: 기존에는 바인더에서 우클릭으로만 목록을 생성하던 방식에서, [트릿]에서도 직접 추가할 수 있도록 수정하였습니다.</li>
+                <li>기존 목록의 이름 패턴을 분석하여 새로 추가되는 에피소드 이름을 다음 순번으로 자동 생성합니다.</li>
+              </ul>
+            </li>
+            <li><b>기타 버그 및 데이터 유실 위험성 제거.</b>
+              <ul>
+                <li>줄 여백·단 여백 설정 이후 입력되는 텍스트에 적용되지 않던 버그 해결. 이후 실행 시에도 설정이 유지되도록 수정하였습니다.</li>
+                <li>데이터 유실 가능성이 있는 코드를 확인·제거하고, 데이터가 유실되지 않도록 '데이터 백업 보호' 코드를 추가하였습니다.</li>
+                <li>데이터 파일 충돌 문제를 막기 위한 방어 코드를 추가하였습니다.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary>2026.07.23 업데이트<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
             <li>[폴더 모드 여러 쪽 보기] 후 [에피소드 단일 모드 여러 쪽 보기] 전환 시 텍스트가 유실되는 버그 해결.</li>
@@ -980,7 +1116,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
           </table>
 
           <p class="shortcut-section-title">다이얼로그(창) 공통</p>
-          <p style="font-size:.84rem;color:var(--text-dim);margin-bottom:6px">'새 작품' 생성 창과 '작품 정보 편집' 창 등 일부 프레임리스 다이얼로그에서:</p>
+          <p style="font-size:.84rem;color:var(--dim);margin-bottom:6px">'새 작품' 생성 창과 '작품 정보 편집' 창 등 일부 프레임리스 다이얼로그에서:</p>
           <table class="shortcut-table">
             <colgroup><col class="col-key"><col></colgroup>
             <thead><tr><th>키</th><th>동작</th></tr></thead>
@@ -1010,7 +1146,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
               <tr><td>Ctrl + ↑</td><td>이전 에피소드 위치로 이동</td></tr>
             </tbody>
           </table>
-          <p style="font-size:.82rem;color:var(--text-dim);margin-top:-8px">※ 폴더 결합 모드에서는 Ctrl+1~9 / Alt+1~9 대신 Ctrl+↑/↓로 에피소드 사이를 이동합니다.</p>
+          <p style="font-size:.82rem;color:var(--dim);margin-top:-8px">※ 폴더 결합 모드에서는 Ctrl+1~9 / Alt+1~9 대신 Ctrl+↑/↓로 에피소드 사이를 이동합니다.</p>
 
         </div>
       </details>
@@ -1034,6 +1170,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
             <li><b>새 작품 추가</b> — 새로운 작품 파일을 생성합니다.</li>
             <li><b>로컬 열기</b> — 로컬(내 문서\PomoWriter Projects\)에 있는 작품 파일을 불러옵니다.</li>
             <li><b>구글 열기</b> — 로그인한 계정의 구글 드라이브에 업로드한 작품을 불러옵니다. (로그인 상태에서 가능)</li>
+            <li><b>작품 폴더 열기</b> — 지금 작품 파일이 있는 폴더를 탐색기로 엽니다.</li>
             <li><b>로컬 저장</b> — 로컬 파일 저장 경로에 저장합니다.</li>
             <li><b>구글 동기화</b> — 작업 중인 작품의 데이터 파일을 로그인한 구글 드라이브(PomoWriter Projects 폴더 안)에 업로드합니다.</li>
             <li><b>자동 동기화 ON/OFF</b> — 백그라운드 동기화 작업을 켜고 끌 수 있습니다.</li>
@@ -1043,7 +1180,9 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
             <li><b>잠금 설정</b> — 프로그램에 비밀번호를 걸어 잠글 수 있습니다. (비밀번호는 내 문서\PomoWriter Projects 폴더 안 txt 파일에 저장되며, 잊은 경우 해당 경로에서 확인할 수 있습니다.)</li>
             <li><b>파일 변환</b> — 작품 내용을 한글 파일 또는 PDF 파일로 변환합니다.</li>
             <li><b>대시보드 ON/OFF</b> — 클릭하여 대시보드 기능을 끄거나 켤 수 있습니다.</li>
+            <li><b>자동 변환 설정</b> — 타이핑 중 기호·대치어를 자동으로 바꿔주는 기능. 자세한 내용은 아래 자동 변환 설정 항목을 참고해 주세요.</li>
             <li><b>경로 이전</b> — 작품 데이터가 있는 PomoWriter Projects 폴더의 경로를 변경할 수 있습니다.</li>
+            <li><b>공용 PC로 전환</b> — 지금 개인 PC 모드일 때만 보이는 메뉴이며, 선택하면 다음 실행부터 공용 PC 모드(실행할 때마다 새로 로그인)로 전환됩니다.</li>
             <li><b>사용 방법</b> — PomoWriter의 사용 방법을 확인 할 수 있습니다.</li>
             <li><b>PomoWriter 안내</b> — 개발자 정보, 홈페이지 주소, 프로그램 버전 정보를 확인하는 창입니다.</li>
           </ul>
@@ -1053,7 +1192,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
       <details class="acc">
         <summary>메뉴바 & 에디터<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
-          <p><b>메뉴바 구성</b>: 폰트 설정 / 폰트 크기 / 굵게 / 기울임 / 밑줄 / 들여쓰기 / 내어쓰기 / 폰트 색상 / 폰트 배경 색상 / 줄 여백 / 문단 여백 / 에디터 폭 너비 / 듀얼 모드 / 뽀모도로 / 집중 모드</p>
+          <p><b>메뉴바 구성</b>: 폰트 설정 / 폰트 크기 / 굵게 / 기울임 / 밑줄 / 들여쓰기 / 내어쓰기 / 폰트 색상 / 폰트 배경 색상 / 줄 여백 / 문단 여백 / 에디터 폭 / 듀얼 모드 / 뽀모도로 / 집중 모드</p>
           <ul>
             <li><b>듀얼 모드</b> — 집필창을 두 개 동시에 열어두고 사용하는 기능. 여러 버전을 비교하거나 퇴고할 때 유용합니다.</li>
             <li><b>뽀모도로</b> — 🔥 집중 시간 / 💧 휴식 시간 / 🎵 집중 음악 ON·OFF.</li>
@@ -1061,11 +1200,23 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
           </ul>
           <p><b>에디터 영역</b></p>
           <ul>
-            <li><b>여러 쪽 보기(📄)</b> — 시리즈, 카카오, 리디 조판 인자 커스텀한 조판으로 집필 할 수 있는 기능입니다. 자세한 내용은 아래의 여러 쪽 보기 사용 설명을 참고해 주세요.</li>
-            <li><b>시계 🕐</b> — 열려 있는 에피소드 파일의 버전을 확인하거나 불러옵니다.</li>
-            <li><b>돋보기 🔎</b> — 에디터 텍스트를 분석합니다. (대사·지문 비율 / 문장 길이 / 자주 등장하는 단어 / 연속된 지문과 문장 어미 필터)</li>
             <li><b>맞춤법(📖)</b> — 부산대 검사기를 이용한 맞춤법 검사를 할 수 있습니다.</li>
-            <li><b>해</b> — 에디터의 해상도를 조절합니다.</li>
+            <li><b>돋보기 🔎</b> — 에디터 텍스트를 분석합니다. (대사·지문 비율 / 문장 길이 / 자주 등장하는 단어 / 연속된 지문과 문장 어미 필터)</li>
+            <li><b>시계 🕐</b> — 열려 있는 에피소드 파일의 버전을 확인하거나 불러옵니다.</li>
+            <li><b>여러 쪽 보기(📄)</b> — 시리즈, 카카오, 리디 조판 인자 커스텀한 조판으로 집필할 수 있는 기능입니다. 자세한 내용은 아래의 여러 쪽 보기 사용 설명을 참고해 주세요.</li>
+            <li><b>숫자 입력창</b> — 에디터의 해상도(확대·축소 비율)를 조절합니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary>바인더<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="acc-body">
+          <ul>
+            <li><b>상단 버튼</b> — [🔍 검색] [➕ 에피소드 추가] [📁 폴더 추가]가 나란히 있습니다.</li>
+            <li><b>검색</b> — 🔍를 누르면 [검색어 입력창] [🔍 검색] [✕ 닫기]로 바뀝니다. ✕를 누르면 다시 원래의 세 버튼으로 돌아갑니다.</li>
+            <li><b>새 에피소드·폴더 추가</b> — ➕/📁를 누르면 새 항목이 추가됩니다. 이름에 숫자가 포함된 기존 에피소드들(001, 01, 1 등 자릿수 무관)이 있으면, 그 다음 번호로 자동으로 이름이 붙습니다(예: 001~010이 있으면 011).</li>
+            <li><b>휴지통 위치</b> — 휴지통은 항상 바인더 목록의 가장 아래에 있습니다. 새로 추가한 에피소드·폴더는 항상 휴지통보다 위에 생성되며, 드래그로 순서를 옮길 때도 휴지통보다 아래로는 이동할 수 없습니다.</li>
           </ul>
         </div>
       </details>
@@ -1143,6 +1294,30 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
       </details>
 
       <details class="acc">
+        <summary>개인 PC / 공용 PC 선택<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="acc-body">
+          <p>PomoWriter를 처음 실행하면(또는 로그인 상태가 초기화되면), 이 컴퓨터를 어떻게 쓸지 먼저 선택합니다.</p>
+          <ul>
+            <li><b>개인 PC</b> — 개인 컴퓨터 환경에서 추천하는 모드이며, 로컬 데이터를 중심으로 운영되고 구글 드라이브 동기화 및 USB 사용이 가능합니다. [개인 PC]를 선택하면 다음 실행 시에도 개인 PC 상태가 유지되며, [공용 PC]로 변경하려면 메인 메뉴의 [공용 PC로 전환]을 이용하세요.</li>
+            <li><b>공용 PC</b> — 도서관·학교 등 여러 사람이 함께 쓰는 컴퓨터 환경에서 추천되는 모드이며, 로컬에 데이터를 남기지 않고 구글 드라이브 혹은 USB를 이용하고 싶은 경우에도 사용할 수 있습니다. 프로그램 종료 시 자동으로 구글 동기화를 진행합니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary>자동 변환 설정<span class="plus" aria-hidden="true">+</span></summary>
+        <div class="acc-body">
+          <p>메인 메뉴 → 자동 변환 설정에서 열 수 있으며, 타이핑하는 동안 특정 글자를 다른 글자로 자동으로 바꿔주는 기능을 관리합니다. 기호 자동 변환과 대치어 자동 변환 두 탭으로 구성되어 있습니다.</p>
+          <ul>
+            <li><b>기호 자동 변환</b> — 큰따옴표·작은따옴표를 여닫는 모양으로, 화살표·대시·말줄임표 같은 기호를 정식 문장부호로 자동 변환합니다. 이 목록은 <b>모든 작품에 공통으로</b> 적용됩니다.</li>
+            <li><b>대치어 자동 변환</b> — 예를 들어 인물 이름처럼 자주 쓰는 단어를 짧게 입력하면 원하는 단어로 자동으로 바뀌게 등록할 수 있습니다. 이 목록은 <b>지금 열려 있는 작품에만 개별적으로</b> 적용됩니다.</li>
+            <li>각 항목은 체크박스로 켜고 끌 수 있고, +추가 버튼으로 새 항목을 등록하거나 목록의 x 버튼으로 삭제할 수 있습니다.</li>
+            <li>서로 겹치는 텍스트를 가진 대치어(예: 여주와 여주오빠)는 변환이 꼬일 수 있어 함께 등록할 수 없도록 막혀 있습니다.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc">
         <summary>시놉<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
@@ -1189,11 +1364,12 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
           <ul>
             <li><b>기승전결/5막 구조</b> — 기승전결 구조도와 5막 구조도로 변경 가능합니다.</li>
           </ul>
-          <p><b>5막 구조 사용방법</b></p>
+          <p><b>구조 사용 방법</b></p>
           <ol>
-            <li>작품의 스토리를 5문장으로 만들어 상위 5막 구조에 입력합니다.</li>
-            <li>그 5문장을 한 문장 당 5개로 쪼개어 중위 5막 구조에 입력합니다.</li>
-            <li>중위 5막 구조의 내용을 다시 5개로 쪼개어 하위 5막 구조에 입력합니다.</li>
+            <li>스토리를 4문장(5막 구조는 5문장)으로 만들어 상위 구조에 나눠 입력합니다.</li>
+            <li>상위 구조의 문장들을 다시 4문장(5막 구조는 5문장)으로 쪼개어 각각의 중위 구조칸에 입력합니다.</li>
+            <li>중위 구조의 문장들을 다시 4문장(5막 구조는 5문장)으로 쪼개어 각각의 하위 구조칸에 입력합니다.</li>
+            <li>모든 단계에 문장을 더 추가하여 이야기의 뼈대를 세밀히 세웁니다.</li>
           </ol>
           <p>기승전결로 구성한다면 '위기' 또는 '결말' 단계를 비워두면 편합니다. 단편은 중위 단계까지, 초단편은 상위 단계까지만 입력해도 충분하며, 모든 구간을 채우지 않아도 됩니다.</p>
         </div>
@@ -1215,8 +1391,10 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
         <summary>트릿<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
           <ul>
-            <li><b>항목설정</b>— 트리트먼트를 기록할 항목을 추가 혹은 삭제 할 수 있습니다.</li>
+            <li><b>항목 설정</b> — 트리트먼트를 기록할 항목을 추가하거나 삭제할 수 있습니다.</li>
             <li>트리트먼트를 작성할 회차를 선택하고 각각의 항목에 알맞게 입력합니다.</li>
+            <li>회차 목록은 바인더의 목록을 그대로 보여주는 것이므로, 바인더에서 회차를 추가·삭제하면 [트릿]에도 즉시 반영됩니다.</li>
+            <li><b>+/- 버튼</b> — 회차 목록 하단의 [+]/[−] 버튼으로도 바로 회차를 추가·삭제할 수 있습니다. 여기서 추가하는 것도 결국 바인더에 새 에피소드를 추가하는 것과 같아서, 이름은 자동으로 번호가 매겨지고 지금까지 등록된 회차 중 가장 번호가 큰 회차가 속한 폴더에 추가됩니다.</li>
           </ul>
         </div>
       </details>
@@ -1268,10 +1446,12 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
             <li><b>탭 추가·삭제</b> — [탭+]/[탭-]로 관리합니다.</li>
             <li><b>인물 추가</b> — [+인물]로 추가합니다. (여주·남주는 [캐릭] 메뉴에서 설정한 이미지로 노드가 생성됩니다.)</li>
             <li><b>그룹 추가</b> — [+그룹] 클릭 후 드래그하면 그룹 영역이 표시됩니다.</li>
-            <li><b>전체화면 작업</b> — [전체보기]로 넓게 작성하고, 인물 노드를 더블 클릭하면 상세 패널이 열립니다.</li>
+            <li><b>상세 보기 패널</b> — 노드를 더블클릭하여 상세 내용 패널을 팝업하거나 닫을 수 있습니다.</li>
+            <li><b>전체화면 작업</b> — [전체보기]로 넓게 작성할 수 있습니다.</li>
             <li><b>인물 연결</b> — 인물에 우클릭 → '연결하기' → 연결할 인물 선택 → 관계명 입력.</li>
             <li><b>수정·삭제</b> — 관계선·그룹·탭 모두 우클릭으로 이름·색상 변경, 삭제가 가능합니다.</li>
-            <li>탭 이름을 에디터에 작성하면 해당 탭 정보가 팝업됩니다. 로판일시, 가문별로 가계도를 만들어놓으면 이름을 오타없이 입력할 수 있습니다.</li>
+            <li><b>배경 영역 확장</b> — 노드를 화면 가장자리로 드래그하거나 스크롤을 끝까지 밀면 배경 영역이 자동으로 넓어집니다.</li>
+            <li>탭 이름을 에디터에 작성하면 해당 탭 정보가 팝업됩니다. 로판일 시, 가문별로 가계도를 만들어놓으면 이름을 오타없이 입력하는 데에 도움이 됩니다.</li>
           </ul>
         </div>
       </details>
@@ -1283,6 +1463,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
             <li><b>하위 노드 추가</b> — 상위 노드에 우클릭 또는 + 버튼으로 추가합니다.</li>
             <li><b>노드 수정·이동</b> — 우클릭으로 이름·색상을 변경하거나 삭제하고, 드래그로 이동합니다.</li>
             <li><b>화면 이동</b> — 바탕화면이나 하단 맵을 드래그해 영역을 이동합니다.</li>
+            <li><b>배경 영역 확장</b> — 노드를 화면 가장자리로 드래그하거나 스크롤을 끝까지 밀면 배경 영역이 자동으로 넓어집니다.</li>
             <li><b>전체 화면 작업</b> — 상단의 [전체 보기] 버튼으로 넓게 작업합니다.</li>
           </ul>
         </div>
@@ -1323,7 +1504,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
             <li><b>단어 검색</b> — 단어를 입력하고 검색 버튼 클릭 또는 엔터.</li>
             <li><b>단어 수집</b> — 검색 결과에서 드래그 → 우클릭 → [작가 사전에 추가] → 작품·태그 선택 후 저장.</li>
             <li><b>작가 사전 이용</b> — [+작품]으로 작품 추가 → [분류 태그 +]로 태그 추가 → 표현을 입력하고 저장. 상황별·감정별 태그로 정리하면 작품마다 반복되거나 중복되는 표현을 줄일 수 있습니다.</li>
-           
+            <li><b>대체어 사전</b> — 미리 등록된 대체 표현 데이터를 검색하는 탭입니다. 단어나 표현을 입력하고 엔터를 누르면, 바꿔 쓸 수 있는 다른 표현들을 바로 확인할 수 있습니다.</li>
           </ul>
         </div>
       </details>
@@ -1331,7 +1512,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
       <details class="acc">
         <summary>KEY<span class="plus" aria-hidden="true">+</span></summary>
         <div class="acc-body">
-          <p>상단에서 플랫폼을 선택해 키워드를 확인하고, 하단의 [랜덤 조합] 버튼으로 키워드를 무작위로 생성합니다.</p>
+          <p>각 플랫폼 별로 키워드를 확인할 수 있으며, 하단의 [랜덤 조합] 버튼을 통해 분류별로 키워드를 랜덤 생성할 수 있습니다.</p>
         </div>
       </details>
 
@@ -1493,7 +1674,7 @@ footer{border-top:1px solid var(--divider-lt);background:var(--surface)}
 </footer>
 
 <script>
-/* ===== 33가지 보조 툴 데이터 ===== */
+/* ===== 36가지 보조 툴 데이터 ===== */
 const FEATURES = [
   { icon:"📝", title:"시놉",
     tagline:"제목, 장르, 로그라인, 기획 의도까지." },
@@ -1543,6 +1724,8 @@ const FEATURES = [
     tagline:"출판사 정보와 기록 항목을 자유롭게 관리." },
   { icon:"📖", title:"인풋 기록",
     tagline:"읽은 웹소설을 회차별로 분석·기록하는 독서 기록 도구." },
+  { icon:"📊", title:"대시보드",
+    tagline:"작품별 진행 상황·떡밥 현황을 한눈에 확인. 메뉴바로 ON/OFF 가능." },
   { icon:"🕐", title:"버전 관리",
     tagline:"에피소드 파일의 이전 버전을 확인하고 불러오기." },
   { icon:"🔎", title:"텍스트 분석",
@@ -1560,7 +1743,11 @@ const FEATURES = [
   { icon:"📄", title:"여러 쪽 보기",
     tagline:"시리즈·카카오·리디 등 플랫폼 조판으로 집필하는 기능." },
   { icon:"🔖", title:"책갈피 기능",
-    tagline:"커서 위치에 책갈피를 달고 단축키로 바로 이동." }
+    tagline:"커서 위치에 책갈피를 달고 단축키로 바로 이동." },
+  { icon:"⚡", title:"기호 자동변환",
+    tagline:"큰따옴표·말줄임표 등 기호를 정식 문장부호로 자동 변환. 모든 작품 공통 적용." },
+  { icon:"🔄", title:"대치어 자동 변환",
+    tagline:"자주 쓰는 단어를 짧게 입력하면 원하는 표현으로 자동 변환. 작품별 개별 적용." }
 ];
 
 /* ===== 카드 렌더 ===== */
