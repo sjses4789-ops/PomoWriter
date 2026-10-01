@@ -1,0 +1,7 @@
+{
+  "version": "2.2.0",
+  "url": "https://github.com/sjses4789-ops/PomoWriter/releases/download/v2.2.0/PomoWriter-Setup-2.2.0.exe",
+  "sha256": "78bda32364e40c511ddef8058431723136fbd873fc42d04f6c35bcd4b374e124",
+  "notes": "에피 폴더 트리 전환\n서브메뉴 연동 강화\n메모-아이템 카드 추가\n타임 카드형 모드 추가\n감정 요약 수치 배지 추가\n접기 손잡이·책갈피 표시 추가\n트릿 시점 겹침 분리 수정\n타임 에피소드 트랙 드래그 동기화 수정\n기타 버그 수정",
+  "mandatory": false
+}
