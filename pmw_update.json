@@ -1,7 +1,7 @@
 {
-  "version": "2.2.1",
-  "url": "https://github.com/sjses4789-ops/PomoWriter/releases/download/v2.2.1/PomoWriter-Setup-2.2.1.exe",
-  "sha256": "008e0d46b712371a6611a0227d4f18b44736fb99e3c35714507c287b55d9597d",
-  "notes": "화면 언어 선택(한국어 / English / 日本語) 추가\n[로그] — 회차 수 관리\n[메모] — 게시판 그림 크기 조절\n[서브 메뉴바] 아이콘 추가 및 표시 방식 설정\n도구 패널을 별도 창으로 분리\n안드로이드 앱을 위한 이미지 동기화\n새 로고·아이콘 적용\n팝업·기본 위젯 디자인 정리\n버그 수정과 편의성 개선",
+  "version": "2.3.0",
+  "url": "https://github.com/sjses4789-ops/PomoWriter/releases/download/v2.3.0/PomoWriter-Setup-2.3.0.exe",
+  "sha256": "1bf2d02613c282d995b7d18fb17b3c86cdeadc31174693c1ba1755a43d5e72e7",
+  "notes": "[이펍] 편집 모드와 뷰어 모드를 하나로 합침\n[캐릭] 항목 편집 방식 변경 및 양식(프리셋) 기능 추가\n한글·워드 문서 불러오기 기능 추가\n[파일 변환]에 [TXT 변환] 추가\n'/'를 이용한 특수기호 입력 기능 추가\n[작업 현황] 메뉴 추가\n버그 수정 및 편의성 개선",
   "mandatory": false
 }
