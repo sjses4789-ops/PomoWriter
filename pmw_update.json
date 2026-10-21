@@ -1,7 +1,7 @@
 {
   "version": "2.3.0",
   "url": "https://github.com/sjses4789-ops/PomoWriter/releases/download/v2.3.0/PomoWriter-Setup-2.3.0.exe",
-  "sha256": "1bf2d02613c282d995b7d18fb17b3c86cdeadc31174693c1ba1755a43d5e72e7",
+  "sha256": "4ca189a17f9c686e02aa7212789af13c259b5dbef5ff45219bdaa1caf6b4d1be",
   "notes": "[이펍] 편집 모드와 뷰어 모드를 하나로 합침\n[캐릭] 항목 편집 방식 변경 및 양식(프리셋) 기능 추가\n한글·워드 문서 불러오기 기능 추가\n[파일 변환]에 [TXT 변환] 추가\n'/'를 이용한 특수기호 입력 기능 추가\n[작업 현황] 메뉴 추가\n버그 수정 및 편의성 개선",
   "mandatory": false
 }
