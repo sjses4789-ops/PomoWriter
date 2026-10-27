@@ -1,7 +1,7 @@
 {
-  "version": "2.3.0",
-  "url": "https://github.com/sjses4789-ops/PomoWriter/releases/download/v2.3.0/PomoWriter-Setup-2.3.0.exe",
-  "sha256": "a4ba4e898323707f2d6e08c151d0b05fcbf279bf8884a61c5b2460d92e143615",
-  "notes": "[이펍] 편집 모드와 뷰어 모드를 하나로 합침\n[캐릭] 항목 편집 방식 변경 및 양식(프리셋) 기능 추가\n한글·워드 문서 불러오기 기능 추가\n[파일 변환]에 [TXT 변환] 추가\n'/'를 이용한 특수기호 입력 기능 추가\n[작업 현황] 메뉴 추가\n버그 수정 및 편의성 개선",
+  "version": "2.3.1",
+  "url": "https://github.com/sjses4789-ops/PomoWriter/releases/download/v2.3.1/PomoWriter-Setup-2.3.1.exe",
+  "sha256": "8a26baa583b80a0157efd06ac63b5bbbf91b559c87a87868318438a912998822",
+  "notes": "[파일 변환] '한글로 변환'이 한글(.hwp) 파일로 저장됨\n[찾기/바꾸기] Enter로 다음 찾기 계속, Shift+Enter로 이전 찾기\n[버전 기록] 4주 삭제 규칙 폐지, 보관 개수 설정 및 📌 보관 기능 추가\n[작업 현황] 월 이동 속도 개선, 기록의 컴퓨터별 저장·구글 드라이브 동기화\n프로그램이 갑자기 종료되던 문제 수정",
   "mandatory": false
 }
