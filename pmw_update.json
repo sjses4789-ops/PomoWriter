@@ -1,7 +1,7 @@
 {
   "version": "2.3.1",
   "url": "https://github.com/sjses4789-ops/PomoWriter/releases/download/v2.3.1/PomoWriter-Setup-2.3.1.exe",
-  "sha256": "8a26baa583b80a0157efd06ac63b5bbbf91b559c87a87868318438a912998822",
-  "notes": "[파일 변환] '한글로 변환'이 한글(.hwp) 파일로 저장됨\n[찾기/바꾸기] Enter로 다음 찾기 계속, Shift+Enter로 이전 찾기\n[버전 기록] 4주 삭제 규칙 폐지, 보관 개수 설정 및 📌 보관 기능 추가\n[작업 현황] 월 이동 속도 개선, 기록의 컴퓨터별 저장·구글 드라이브 동기화\n프로그램이 갑자기 종료되던 문제 수정",
+  "sha256": "3d5802c8c7d1d0e6fd5359976741b36ca52c4954ac597b624ac699ae6300bb58",
+  "notes": "[파일 변환] '한글로 변환'이 한글(.hwp) 파일로 저장됨\n[찾기/바꾸기] Enter로 다음 찾기 계속, Shift+Enter로 이전 찾기\n[버전 기록] 4주 삭제 규칙 폐지, 보관 개수 설정 및 📌 보관 기능 추가\n[작업 현황] 월 이동 속도 개선, 기록의 컴퓨터별 저장·구글 드라이브 동기화\n프로그램이 갑자기 종료되던 문제 수정\n예전 방식으로 설치된 PomoWriter가 있으면 바로가기를 새 위치로 옮기고 정리를 안내",
   "mandatory": false
 }
